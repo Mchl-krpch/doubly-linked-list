@@ -14,7 +14,7 @@ int main () {
 	// ChangeCapacity (Tokens, Tokens->capacity * 2);
 
 	// printList (Tokens);
-	for (unsigned newEl = 1; newEl < 13; newEl++) {
+	for (unsigned newEl = 1; newEl < 2; newEl++) {
 		printf ("\n\nINSERTING AFTER: %u\n", newEl);
 		InsertAfter (newEl, Tokens, 7);
 		printList (Tokens);
@@ -194,15 +194,14 @@ void printList (list *list) {
 
 void drowList (list *list) {
 	assert (list);
-
 	FILE *IR_TOKENS = fopen ("viz/ir-tokens.dot", "w");
-	assert (IR_TOKENS);
-	
-	fprintf (IR_TOKENS, "digraph G { bgcolor=\"#0D1117\"\n");
+
+	fprintf (IR_TOKENS, "digraph G {\n\tbgcolor=\"#0D1117\"\n\n\t# the design of the nodes themselves\n");
 	for (unsigned el = 0; el < list->capacity; el++) {
 		printf ("print list[%u]\n", el);
 		fprintf (IR_TOKENS, FILL_CELL2, el, typeColor[el], types[el], "include", "INCL", el, el);
 	}
+	fprintf (IR_TOKENS, "\t# connection of these nodes\n");
 	for (unsigned el = 0; el < list->capacity; el++) {
 		if (list->cells[el].next >= 0) {
 			fprintf (IR_TOKENS, "\tL%u:\"n%u\" -> L%d[color=\"%s\"];\n", el, el, list->cells[el].next, "white");
