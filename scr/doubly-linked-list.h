@@ -99,12 +99,14 @@ struct list {
 };
 
 struct list *newList (unsigned capacity);
-void printList (list *list);
-int FindEmpty (list *list);
 void ChangeCapacity (list *list, unsigned capacity);
 void listDtor (list *list);
+int FindEmpty (list *list);
 void InsertAfter (unsigned index, list *list, int value);
+void InsertAfter_str (unsigned index, list *list, const char *lexem);
 void removeElem (unsigned el, list *list);
+void printList (list *list);
+void printList_str (list *list);
 
 void drowList (list *list);
 

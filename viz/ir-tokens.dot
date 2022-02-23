@@ -38,7 +38,52 @@ digraph G {
 				</table>>];
 
 
+	L4 [shape=none label = <<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="peru">
+		<tr><td colspan="2" width="80px" height="35px" color="#32383F" border="1">		<font color="white">TOKEN #133     |    type: DOUBLE</font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td></tr>
+		<tr><td PORT="p4" width="80px" border="1" color="#32383F"><font color ="white">Previous<br align="left"/>cell<br align="left"/></font></td>
+				<td PORT="n4" width="80px" border="1" color="#32383F">		<font color ="white">next<br/>cell</font></td></tr>
+				</table>>];
+
+
+	L5 [shape=none label = <<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="#000697">
+		<tr><td colspan="2" width="80px" height="35px" color="#32383F" border="1">		<font color="white">TOKEN #133     |    type: OPERATOR</font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td></tr>
+		<tr><td PORT="p5" width="80px" border="1" color="#32383F"><font color ="white">Previous<br align="left"/>cell<br align="left"/></font></td>
+				<td PORT="n5" width="80px" border="1" color="#32383F">		<font color ="white">next<br/>cell</font></td></tr>
+				</table>>];
+
+
+	L6 [shape=none label = <<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="skyblue">
+		<tr><td colspan="2" width="80px" height="35px" color="#32383F" border="1">		<font color="white">TOKEN #133     |    type: VARIABLE</font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td></tr>
+		<tr><td PORT="p6" width="80px" border="1" color="#32383F"><font color ="white">Previous<br align="left"/>cell<br align="left"/></font></td>
+				<td PORT="n6" width="80px" border="1" color="#32383F">		<font color ="white">next<br/>cell</font></td></tr>
+				</table>>];
+
+
+	L7 [shape=none label = <<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
+		<tr><td colspan="2" width="80px" height="35px" color="#32383F" border="1">		<font color="white">TOKEN #133     |    type: 
+
+INSERTING AFTER: %u
+</font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td></tr>
+		<tr><td align="left" colspan="2">		<font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td></tr>
+		<tr><td PORT="p7" width="80px" border="1" color="#32383F"><font color ="white">Previous<br align="left"/>cell<br align="left"/></font></td>
+				<td PORT="n7" width="80px" border="1" color="#32383F">		<font color ="white">next<br/>cell</font></td></tr>
+				</table>>];
+
+
 	# connection of these nodes
+	L0:"n0" -> L1[color="white"];
 	L1:"n1" -> L2[color="white"];
-	L2:"n2" -> L3[color="white"];
+	L1:"p1" -> L0[color="#32383F" arrowhead = box];
+	L2:"p2" -> L1[color="#32383F" arrowhead = box];
+	L3:"n3" -> L4[color="white"];
+	L4:"n4" -> L5[color="white"];
+	L5:"n5" -> L6[color="white"];
+	L6:"n6" -> L7[color="white"];
 }

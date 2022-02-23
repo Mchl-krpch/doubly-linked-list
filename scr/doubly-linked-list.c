@@ -8,20 +8,20 @@
 #include "doubly-linked-list.h"
 
 int main () {
-	list *Tokens = newList (4);
-	printList (Tokens);
+	list *Tokens = newList (8);
+	printList_str (Tokens);
 
 	// ChangeCapacity (Tokens, Tokens->capacity * 2);
 
 	// printList (Tokens);
-	for (unsigned newEl = 1; newEl < 2; newEl++) {
+	for (unsigned newEl = 1; newEl < 4; newEl++) {
 		printf ("\n\nINSERTING AFTER: %u\n", newEl);
-		InsertAfter (newEl, Tokens, 7);
+		InsertAfter_str (newEl, Tokens, "MEOW");
 		printList (Tokens);
 	}
 
 	removeElem (3, Tokens);
-	printList (Tokens);
+	printList_str (Tokens);
 	drowList (Tokens);
 	return 0;
 }
@@ -142,6 +142,49 @@ void InsertAfter (unsigned index, list *list, int value) {
 	return;
 }
 
+void InsertAfter_str (unsigned index, list *list, const char *lexem) {
+	assert (list  != nullptr);
+
+	int freeIndex = FindEmpty (list);
+	list->cells[freeIndex].data.lexem = (char *)calloc (100, sizeof (char));
+	strcpy (list->cells[freeIndex].data.lexem, lexem);
+		
+	// if we insert by position of free 
+	if (list->cells[index].prev < 0) {
+		printf ("index is out of range of list\n");
+		printf ("empty: %d, index: %u\n", list->free, index);
+		printf ("freeIndex: %d\n", freeIndex);
+		list->cells[freeIndex].next = list->free;
+
+		if (freeIndex == list->tail) {
+			list->cells[freeIndex].next = -2;
+		}
+
+		if (list->cells[freeIndex].prev > -2) {
+			list->cells[list->tail].next = freeIndex;
+			list->cells[freeIndex].prev = list->tail;
+			list->tail = freeIndex;
+			list->cells[freeIndex].next = -2;
+		}
+	}
+	// insert after index in list
+	else {
+		printf ("[IN] empty: %d, index: %u\n", list->free, index);
+		printf ("[IN] freeIndex: %d\n", freeIndex);
+
+		strcpy (list->cells[freeIndex].data.lexem, lexem);
+
+		list->cells[freeIndex].prev = index;
+		list->cells[listNext (list, index)].prev = freeIndex;
+
+		list->cells[freeIndex].next = list->cells[index].next;
+		list->cells[index].next = freeIndex;
+	}
+
+	list->size++;
+	return;
+}
+
 void removeElem (unsigned el, list *list) {
 	assert (list);
 
@@ -183,6 +226,30 @@ void printList (list *list) {
 	// #outputting list
 	for (int el = 0; el < (int)list->capacity; el++) {
 		printf ("%-5d| %5d\t{%15d} %5d", el, list->cells[el].prev, list->cells[el].data.num_d, list->cells[el].next);
+		// #drow pointers {head, tail, free} 
+		if (el == list->head) {printf ("   <head");}
+		if (el == list->tail) {printf ("   <tail");}
+		if (el == list->free) {printf ("   <free");}
+		printf ("\n");
+	}
+	return;
+}
+
+void printList_str (list *list) {
+	assert (list != nullptr);
+
+	printf ("________________________________________________\n");
+	printf ("%-5s| %5s\t %15s  %5s\n", "out", "prev", "data", "next");
+	printf ("%-5s  %5s\t %15s  %5s\n", "--", "--", "--", "--");
+
+	// #outputting list
+	for (int el = 0; el < (int)list->capacity; el++) {
+		if (el < (int)list->size) {
+			printf ("%-5d| %5d\t{%15s} %5d", el, list->cells[el].prev, list->cells[el].data.lexem, list->cells[el].next);
+		}
+		else {
+			printf ("%-5d| %5d\t{%15s} %5d", el, list->cells[el].prev, "", list->cells[el].next);
+		}
 		// #drow pointers {head, tail, free} 
 		if (el == list->head) {printf ("   <head");}
 		if (el == list->tail) {printf ("   <tail");}
