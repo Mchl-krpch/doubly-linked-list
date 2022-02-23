@@ -266,7 +266,12 @@ void drowList (list *list) {
 	fprintf (IR_TOKENS, "digraph G {\n\tbgcolor=\"#0D1117\"\n\n\t# the design of the nodes themselves\n");
 	for (unsigned el = 0; el < list->capacity; el++) {
 		printf ("print list[%u]\n", el);
-		fprintf (IR_TOKENS, FILL_CELL2, el, typeColor[el], types[el], "include", "INCL", el, el);
+		if (el < list->size) {
+			fprintf (IR_TOKENS, FILL_CELL2, el, typeColor[el], types[el], list->cells[el].data.lexem, "INCL", el, el);
+		}
+		else {
+			fprintf (IR_TOKENS, FILL_CELL2, el, typeColor[el], types[el], "include", "INCL", el, el);
+		}
 	}
 	fprintf (IR_TOKENS, "\t# connection of these nodes\n");
 	for (unsigned el = 0; el < list->capacity; el++) {
