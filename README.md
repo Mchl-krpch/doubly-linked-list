@@ -9,5 +9,5 @@ Implemented drawing with `tables`, in which it is possible to conveniently catal
 ## Usage
 This project is extremely small, the only new thing that can be emphasized is the `graphviz` library with its `tables` and `hash functions.`
 
-## Thanks! Have a good day!
+### Thanks! Have a good day!
 
