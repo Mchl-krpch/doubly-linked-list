@@ -7,7 +7,7 @@ Implemented drawing with `tables`, in which it is possible to conveniently catal
 ![sample](https://raw.githubusercontent.com/Mchl-krpch/Doubly-linked-list/main/viz/token-cell2.jpg)
 
 ## Usage
-This project is extremely small, the only new thing that can be emphasized is the graphviz library with its `tables` and `hash functions.`
+This project is extremely small, the only new thing that can be emphasized is the `graphviz` library with its `tables` and `hash functions.`
 
 ## Thanks! Have a good day!
 
