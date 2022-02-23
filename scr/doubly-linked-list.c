@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 #include "doubly-linked-list.h"
 
 int main () {
-	list *Tokens = newList (25);
+	list *Tokens = newList (6);
 	printList (Tokens);
 
 	// printList (Tokens);
-	for (unsigned newEl = 3; newEl < 8; newEl++) {
+	for (unsigned newEl = 1; newEl < 4; newEl++) {
 		printf ("\n\nINSERTING AFTER: %d\n", newEl);
 		InsertAfter (newEl, Tokens, 7);
 		printList (Tokens);
 	}
 
-	removeElem (3, Tokens);
+	// removeElem (3, Tokens);
 	printList (Tokens);
-
-	drowCell ();
+	drowList (Tokens);
+	// drowCell ();
 	return 0;
 }
 
-// #lib
+// #librari
 static inline unsigned listNext (list *list, unsigned index) {
 	return list->cells[index].next;
 }
@@ -203,5 +204,25 @@ void listDtor (list *list) {
 
 // #vizualisation of list
 void drowList (list *list) {
+	FILE *IR_TOKENS = fopen ("viz/ir-tokens.dot", "w");
+
+	fprintf (IR_TOKENS, "digraph G { bgcolor=\"#0D1117\"\n");
+	for (unsigned el = 0; el < list->capacity; el++) {
+		printf ("print list[%d]\n", el);
+		fprintf (IR_TOKENS, FILL_CELL2, el, typeColor[el], types[el], "include", "INCL", el, el);
+	}
+	for (unsigned el = 0; el < list->capacity; el++) {
+		if (list->cells[el].next >= 0) {
+			fprintf (IR_TOKENS, "\tL%d:\"n%d\" -> L%d[color=\"%s\"];\n", el, el, list->cells[el].next, "white");
+		}
+		if (list->cells[el].prev >= 0) {
+			fprintf (IR_TOKENS, "\tL%d:\"p%d\" -> L%d[color=\"%s\" arrowhead = box];\n", el, el, list->cells[el].prev, "#32383F");
+		}
+	}
+
+	fprintf (IR_TOKENS, "}\n");
+
+	fclose (IR_TOKENS);
+	system ("dot viz/ir-tokens.dot -T jpg -o viz/ir-tokens.jpg");
 	return;
 }

@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 #define INCREASE_COEF 2
-#define FILL_CELL() 	\
+#define FILL_CELL()\
 "L0[shape=none label = <\n\
 \t<table cellborder=\"0\" cellspacing=\"18\" bgcolor=\"#0D1117\" border=\"1\" color=\"#79C0FF\">\n\
 \t\t<tr>\n\
@@ -18,14 +18,58 @@
 \t\t\t<td align=\"left\" colspan=\"2\"><font point-size=\"23\" color=\"#C9D1D9\">Translate:</font><br align=\"left\"/></td>\n\
 \t\t</tr>\n\
 \t\t<tr>\n\
-\t\t\t<td bgcolor=\"#000697\" width=\"80px\" border=\"1\" color=\"#30363D\">\
+\t\t\t<td PORT=\"r0\" bgcolor=\"#000697\" width=\"80px\" border=\"1\" color=\"#30363D\">\
 <font color =\"#79C0FF\">Previous<br align=\"left\"/>cell<br align=\"left\"/>\
 </font></td>\n\
-\t\t\t<td bgcolor=\"#000697\" width=\"80px\" border=\"1\" color=\"#30363D\">\
+\t\t\t<td PORT=\"l0\" bgcolor=\"#000697\" width=\"80px\" border=\"1\" color=\"#30363D\">\
 <font color =\"#79C0FF\">next<br/>cell \
 </font></td>\n\
 \t\t</tr>\n	\
 </table>>];\n"
+
+
+#define FILL_CELL2 \
+"\tL%u[shape=none label = <\n\
+\t\t<table cellborder=\"0\" cellspacing=\"18\" bgcolor=\"#0D1117\" border=\"10\" color=\"%s\">\n\
+\t\t\t<tr>\n\
+\t\t\t\t<td colspan=\"2\" width=\"80px\" height=\"35px\" color=\"#32383F\" border=\"1\">\
+\t<font color=\"white\">TOKEN #133     |    type: %s</font></td>\n\
+\t\t\t</tr>\n\
+\t\t\t<tr>\n\
+\t\t\t\t<td align=\"left\" colspan=\"2\"><font point-size=\"23\" color=\"#C9D1D9\">Token:      <b>%s</b></font></td>\n\
+\t\t\t</tr>\n\
+\t\t\t<tr>\n\
+\t\t\t\t<td align=\"left\" colspan=\"2\"><font point-size=\"23\" color=\"#C9D1D9\">Translate:  <b>%s</b></font><br align=\"left\"/></td>\n\
+\t\t\t</tr>\n\
+\t\t\t<tr>\n\
+\t\t\t\t<td PORT=\"p%d\" width=\"80px\" border=\"1\" color=\"#32383F\">\
+\t<font color =\"white\">Previous<br align=\"left\"/>cell<br align=\"left\"/>\
+\t</font></td>\n\
+\t\t\t\t<td PORT=\"n%d\" width=\"80px\" border=\"1\" color=\"#32383F\">\
+\t<font color =\"white\">next<br/>cell \
+\t</font></td>\n\
+\t\t\t</tr>\n	\
+\t</table>>];\n"
+
+const char typeColor[][100] {
+	"lightslategrey",
+	"red4",
+	"orangered4",
+	"sienna2",
+	"peru",
+	"#000697",
+	"skyblue"
+};
+
+const char types[][100] {
+	"NONE",
+	"CHAR",
+	"INT",
+	"FLOAT",
+	"DOUBLE",
+	"OPERATOR",
+	"VARIABLE"
+};
 
 // - - - - - - - - - - -
 // lexem 
@@ -93,12 +137,13 @@ struct list {
 
 struct list *newList (unsigned capacity);
 void drowCell ();
-void drowList (list *list);
 void printList (list *list);
 unsigned FindEmpty (list *list);
 void ChangeCapacity (list *list, unsigned capacity);
 void listDtor (list *list);
 void InsertAfter (unsigned index, list *list, int value);
 void removeElem (unsigned el, list *list);
+
+void drowList (list *list);
 
 #endif
