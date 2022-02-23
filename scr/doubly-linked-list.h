@@ -136,7 +136,6 @@ struct list {
 };
 
 struct list *newList (unsigned capacity);
-void drowCell ();
 void printList (list *list);
 int FindEmpty (list *list);
 void ChangeCapacity (list *list, unsigned capacity);

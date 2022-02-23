@@ -114,7 +114,10 @@ digraph G { bgcolor="#0D1117"
 	L7[shape=none label = <
 		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
 			<tr>
-				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: scr/doubly-linked-list.c</font></td>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: 
+
+INSERTING AFTER: %u
+</font></td>
 			</tr>
 			<tr>
 				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
@@ -130,7 +133,7 @@ digraph G { bgcolor="#0D1117"
 	L8[shape=none label = <
 		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
 			<tr>
-				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type:  list
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: mpty: %d, index: %u
 </font></td>
 			</tr>
 			<tr>
@@ -147,7 +150,7 @@ digraph G { bgcolor="#0D1117"
 	L9[shape=none label = <
 		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
 			<tr>
-				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type:  element is already empty</font></td>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type:  is already empty</font></td>
 			</tr>
 			<tr>
 				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
@@ -163,7 +166,7 @@ digraph G { bgcolor="#0D1117"
 	L10[shape=none label = <
 		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
 			<tr>
-				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: s	 %15s  %5s
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type:  %5s
 </font></td>
 			</tr>
 			<tr>
@@ -180,7 +183,7 @@ digraph G { bgcolor="#0D1117"
 	L11[shape=none label = <
 		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
 			<tr>
-				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: viz.dot</font></td>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: s.dot</font></td>
 			</tr>
 			<tr>
 				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
@@ -193,14 +196,144 @@ digraph G { bgcolor="#0D1117"
 				<td PORT="n11" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
 			</tr>
 		</table>>];
+	L12[shape=none label = <
+		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
+			<tr>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: le cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="%s">
+			<tr>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: %s</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>%s</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>%s</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p%u" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n%u" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p12" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n12" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+	L13[shape=none label = <
+		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
+			<tr>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: ="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: %s</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>%s</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>%s</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p%u" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n%u" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p13" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n13" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+	L14[shape=none label = <
+		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="">
+			<tr>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: type: %s</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>%s</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>%s</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p%u" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n%u" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p14" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n14" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+	L15[shape=none label = <
+		<table cellborder="0" cellspacing="18" bgcolor="#0D1117" border="10" color="t
+">
+			<tr>
+				<td colspan="2" width="80px" height="35px" color="#32383F" border="1">	<font color="white">TOKEN #133     |    type: #C9D1D9">Token:      <b>%s</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>%s</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p%u" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n%u" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
+</font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Token:      <b>include</b></font></td>
+			</tr>
+			<tr>
+				<td align="left" colspan="2"><font point-size="23" color="#C9D1D9">Translate:  <b>INCL</b></font><br align="left"/></td>
+			</tr>
+			<tr>
+				<td PORT="p15" width="80px" border="1" color="#32383F">	<font color ="white">Previous<br align="left"/>cell<br align="left"/>	</font></td>
+				<td PORT="n15" width="80px" border="1" color="#32383F">	<font color ="white">next<br/>cell 	</font></td>
+			</tr>
+		</table>>];
 	L0:"n0" -> L1[color="white"];
 	L1:"n1" -> L2[color="white"];
-	L2:"n2" -> L3[color="white"];
-	L3:"n3" -> L4[color="white"];
+	L1:"p1" -> L0[color="#32383F" arrowhead = box];
+	L2:"n2" -> L4[color="white"];
+	L2:"p2" -> L1[color="#32383F" arrowhead = box];
+	L3:"n3" -> L12[color="white"];
 	L4:"n4" -> L5[color="white"];
+	L4:"p4" -> L2[color="#32383F" arrowhead = box];
+	L5:"n5" -> L6[color="white"];
+	L5:"p5" -> L4[color="#32383F" arrowhead = box];
 	L6:"n6" -> L7[color="white"];
+	L6:"p6" -> L5[color="#32383F" arrowhead = box];
 	L7:"n7" -> L8[color="white"];
+	L7:"p7" -> L6[color="#32383F" arrowhead = box];
 	L8:"n8" -> L9[color="white"];
+	L8:"p8" -> L7[color="#32383F" arrowhead = box];
 	L9:"n9" -> L10[color="white"];
+	L9:"p9" -> L8[color="#32383F" arrowhead = box];
 	L10:"n10" -> L11[color="white"];
+	L10:"p10" -> L9[color="#32383F" arrowhead = box];
+	L11:"p11" -> L10[color="#32383F" arrowhead = box];
+	L12:"n12" -> L13[color="white"];
+	L13:"n13" -> L14[color="white"];
+	L14:"n14" -> L15[color="white"];
 }

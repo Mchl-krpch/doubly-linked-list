@@ -8,25 +8,24 @@
 #include "doubly-linked-list.h"
 
 int main () {
-	list *Tokens = newList (6);
+	list *Tokens = newList (4);
 	printList (Tokens);
 
-	ChangeCapacity (Tokens, Tokens->capacity * 2);
+	// ChangeCapacity (Tokens, Tokens->capacity * 2);
 
-	// // printList (Tokens);
-	// for (unsigned newEl = 1; newEl < 8; newEl++) {
-	// 	printf ("\n\nINSERTING AFTER: %d\n", newEl);
-	// 	InsertAfter (newEl, Tokens, 7);
-	// 	printList (Tokens);
-	// }
-
-	// // removeElem (3, Tokens);
 	// printList (Tokens);
+	for (unsigned newEl = 1; newEl < 13; newEl++) {
+		printf ("\n\nINSERTING AFTER: %u\n", newEl);
+		InsertAfter (newEl, Tokens, 7);
+		printList (Tokens);
+	}
+
+	removeElem (3, Tokens);
+	printList (Tokens);
 	drowList (Tokens);
 	return 0;
 }
 
-// #librari
 static inline unsigned listNext (list *list, unsigned index) {
 	return list->cells[index].next;
 }
@@ -59,8 +58,7 @@ struct list *newList (unsigned capacity) {
 void ChangeCapacity (list *list, unsigned capacity) {
 	assert (list != nullptr);
 
-	printf ("list:capacity = %u | new: %u\n", list->capacity, capacity);
-
+	list->cells[list->capacity - 1].next = list->capacity;
 	list->cells = (Token *)realloc (list->cells, capacity * sizeof (Token));
 
 	for (unsigned el = list->capacity; el < capacity; el++) {
@@ -74,7 +72,6 @@ void ChangeCapacity (list *list, unsigned capacity) {
 	printList (list);
 	return;
 }
-
 
 void listDtor (list *list) {
 	assert (list != nullptr);
@@ -103,7 +100,6 @@ int FindEmpty (list *list) {
 	return save_free;
 }
 
-// #want: to make function ...{After/before} as function-toggle
 void InsertAfter (unsigned index, list *list, int value) {
 	assert (list  != nullptr);
 
@@ -196,23 +192,12 @@ void printList (list *list) {
 	return;
 }
 
-void drowCell () {
-	FILE *viz = fopen ("viz/viz.dot", "w");
-	fprintf (viz, "graph G {\n");
-	fprintf (viz, "size=\"8.2, 8.2\"\n");
-
-	// fprintf (viz, "a->b\n");
-	fprintf (viz, FILL_CELL());
-	fprintf (viz, "}\n");
-
-	fclose (viz);
-	system ("dot viz/viz.dot -T png -o viz/viz.png");
-}
-
-// #vizualisation of list
 void drowList (list *list) {
-	FILE *IR_TOKENS = fopen ("viz/ir-tokens.dot", "w");
+	assert (list);
 
+	FILE *IR_TOKENS = fopen ("viz/ir-tokens.dot", "w");
+	assert (IR_TOKENS);
+	
 	fprintf (IR_TOKENS, "digraph G { bgcolor=\"#0D1117\"\n");
 	for (unsigned el = 0; el < list->capacity; el++) {
 		printf ("print list[%u]\n", el);
