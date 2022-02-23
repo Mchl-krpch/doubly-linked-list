@@ -3,6 +3,8 @@
 #include <assert.h>
 #include <string.h>
 
+#define meow printf("meeeeeeeeow\n");
+
 #include "doubly-linked-list.h"
 
 int main () {
