@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 
+#define INCREASE_COEF 2
 #define FILL_CELL() 	\
 "L0[shape=none label = <\n\
 \t<table cellborder=\"0\" cellspacing=\"18\" bgcolor=\"#0D1117\" border=\"1\" color=\"#79C0FF\">\n\
@@ -71,8 +72,8 @@ union tokenData {
 struct Token {
 	int index = 0;
 	// #ptrs to another cells
-	Token *prev = nullptr;
-	Token *next = nullptr;
+	int prev = 0;
+	int next = 0;
 
 	// #node content
 	tokenData data = {};
@@ -92,5 +93,11 @@ struct list {
 
 struct list *newList (unsigned capacity);
 void drowCell ();
+void drowList (list *list);
+void printList (list *list);
+int FindEmpty (list *list);
+void ChangeCapacity (list *list, unsigned capacity);
+void listDtor (list *list);
+void InsertAfter (int index, list *list, int value);
 
 #endif

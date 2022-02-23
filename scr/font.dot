@@ -1,5 +1,0 @@
-digraph G {
-	fontname="times bold italic"
-	L0[shape=none label = <<table>
-	<tr><td>Gilroy-Regular</td></tr>	</table>>];
-}
