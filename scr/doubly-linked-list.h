@@ -95,9 +95,10 @@ struct list *newList (unsigned capacity);
 void drowCell ();
 void drowList (list *list);
 void printList (list *list);
-int FindEmpty (list *list);
+unsigned FindEmpty (list *list);
 void ChangeCapacity (list *list, unsigned capacity);
 void listDtor (list *list);
-void InsertAfter (int index, list *list, int value);
+void InsertAfter (unsigned index, list *list, int value);
+void removeElem (unsigned el, list *list);
 
 #endif
