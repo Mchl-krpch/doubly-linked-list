@@ -1,4 +1,4 @@
-# Doubly-linked-list ![c](https://raw.githubusercontent.com/Mchl-krpch/Doubly-linked-list/0e5e5aa81aa5ad812036397ebd1e786ce6d94cd3/viz/c.svg)
+# Doubly-linked-list  ![c](https://raw.githubusercontent.com/Mchl-krpch/Doubly-linked-list/0e5e5aa81aa5ad812036397ebd1e786ce6d94cd3/viz/c.svg)
 This work is created only to improve the work of the `tokenizer` in my `Light-lang` The visualization of the list itself has been improved, and the logic of the location of data about tokens in the language has been thought out.
 
 ## Visualization
