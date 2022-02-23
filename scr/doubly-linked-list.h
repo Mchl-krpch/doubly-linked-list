@@ -42,10 +42,10 @@
 \t\t\t\t<td align=\"left\" colspan=\"2\"><font point-size=\"23\" color=\"#C9D1D9\">Translate:  <b>%s</b></font><br align=\"left\"/></td>\n\
 \t\t\t</tr>\n\
 \t\t\t<tr>\n\
-\t\t\t\t<td PORT=\"p%d\" width=\"80px\" border=\"1\" color=\"#32383F\">\
+\t\t\t\t<td PORT=\"p%u\" width=\"80px\" border=\"1\" color=\"#32383F\">\
 \t<font color =\"white\">Previous<br align=\"left\"/>cell<br align=\"left\"/>\
 \t</font></td>\n\
-\t\t\t\t<td PORT=\"n%d\" width=\"80px\" border=\"1\" color=\"#32383F\">\
+\t\t\t\t<td PORT=\"n%u\" width=\"80px\" border=\"1\" color=\"#32383F\">\
 \t<font color =\"white\">next<br/>cell \
 \t</font></td>\n\
 \t\t\t</tr>\n	\
@@ -73,7 +73,7 @@ const char types[][100] {
 
 // - - - - - - - - - - -
 // lexem 
-enum class lexemType{
+enum class lexemType {
 	nil = 0,
 	num_c,
 	num_d,
@@ -126,8 +126,8 @@ struct Token {
 };
 
 struct list {
-	size_t size = 0;
-	size_t capacity = 0;
+	unsigned size = 0;
+	unsigned capacity = 0;
 	Token *cells = nullptr;
 
 	int head = 0;
@@ -138,7 +138,7 @@ struct list {
 struct list *newList (unsigned capacity);
 void drowCell ();
 void printList (list *list);
-unsigned FindEmpty (list *list);
+int FindEmpty (list *list);
 void ChangeCapacity (list *list, unsigned capacity);
 void listDtor (list *list);
 void InsertAfter (unsigned index, list *list, int value);
